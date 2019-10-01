@@ -1,0 +1,62 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+   <br>
+<div class="container">
+    
+    <div class="row">
+        <br>
+        <div class="col-md-2"></div>
+       
+        <div class="col-md-8">
+            <% if ( orders.length <= 0 ) { %>
+
+                <h1>Nothing orders</h1>
+                <% } else {  %>
+                     <% orders.forEach(order => { %>
+
+                        <table class="table table-striped table-dark">
+                   
+                        <thead>
+                          <tr>
+                            <th scope="col">OrderId#</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Product Quantity</th>
+                            <th scope="col">Product Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                            
+                            <% order.items.forEach(product =>{  %>
+                        <tr>
+                            <th scope="row"><%= product._id %></th>   
+                            <td><%= product.title %></td>
+                            <td><%= product.quantity%></td>
+                            <td>price</td>
+
+                          </tr>
+                            <%  }); %>
+                            
+                            <% });  %>
+                        
+                       
+                    </tbody>
+                </table>
+                   
+                    
+                      <% } %>
+        </div>
+        <div class="col-md-2"></div>
+
+
+    </div>
+</div>
+
+
+<%- include('../includes/end.ejs') %>

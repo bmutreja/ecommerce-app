@@ -1,0 +1,39 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+<br>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <h2 class="text-center">Login</h2>
+                    <form class="login-form" action="/login" method="POST">
+           
+                        <div class="form-group">
+                           
+                            <input type="email" name="email" id="email" class="form-control" placeholder="please enter email id">
+                        </div>
+            
+                        <div class="form-group">
+                                
+                                <input type="password" name="password" id="password" class="form-control" placeholder="please enter your password">
+                        </div>
+                    
+                        <button class="btn btn-success" type="submit">Login</button>  
+                    </form>
+
+
+
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+      </div>  
+       
+    
+
+
+<%- include('../includes/end.ejs') %>
